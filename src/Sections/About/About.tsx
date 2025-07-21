@@ -1,12 +1,14 @@
 import { MdOutlineArrowForward } from "react-icons/md"
 import { FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import img_profile from "../../assets/img_profile.png"
-// import img_animate from "../../assets/devFronEndimg-removebg-preview.png"
 
 export default function About() {
     return (
         <section className="text-white w-full h-screen flex flex-col justify-center">
-            <h1 className="text-center text-3xl uppercase font-bold appearLeft">Sobre mim</h1>
+            <h1 className="text-center text-3xl uppercase font-bold appearLeft flex flex-col items-center gap-2">
+                Sobre mim
+                <span className="w-full max-w-[300px] p-[0.5px] bg-white appearLine"></span>
+            </h1>
             <div className="m-5 md:flex md:items-center md:flex-row-reverse gap-5">
                 <div className="w-full flex justify-center appearRight">
                     <img src={img_profile} alt="Imagem de perfil" className="rounded-full max-w-[300px] w-full h-[300px] md:max-w-[600px] md:h-[600px] object-cover object-[0_20%]" />

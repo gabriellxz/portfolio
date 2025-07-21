@@ -136,7 +136,6 @@
   animation: appearLeft linear;
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
-  z-index: -10;
 }
 
 @keyframes appearRight {
@@ -156,5 +155,18 @@
   animation: appearRight linear;
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
-  z-index: -10;
+}
+
+@keyframes lineAnimate {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.appearLine {
+  animation: infinite lineAnimate 3s ease-in-out;
 }

@@ -1,9 +1,9 @@
 import { FaCss3Alt, FaGitAlt, FaHtml5, FaReact } from "react-icons/fa";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../../components/ui/carousel";
 import { SiNextdotjs, SiTypescript } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { Card, CardContent } from "../ui/card";
+import { Card, CardContent } from "../../components/ui/card";
 
 export default function Skills() {
 
@@ -37,7 +37,10 @@ export default function Skills() {
     return (
         <section className="w-full text-white mt-16 h-screen flex flex-col justify-center">
             <div className="appearLeft">
-                <h1 className="text-center text-3xl uppercase font-bold">Minhas Skills</h1>
+                <h1 className="text-center text-3xl uppercase font-bold flex flex-col items-center gap-2">
+                    Minhas Skills
+                    <span className="w-full max-w-[300px] p-[0.5px] bg-white appearLine"></span>
+                </h1>
                 <p className="text-center font-extralight">Estas são as tecnologias com as quais eu trabalho</p>
             </div>
 
