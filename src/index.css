@@ -123,12 +123,12 @@
 @keyframes appearLeft {
   from {
     opacity: 0;
-    transform: translateX(-200px);
+    transform: translateX(-20%);
   }
 
   to {
     opacity: 1;
-    transform: translateX(0px);
+    transform: translateX(0%);
   }
 }
 
@@ -136,17 +136,19 @@
   animation: appearLeft linear;
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 @keyframes appearRight {
   from {
     opacity: 0;
-    transform: translateX(200px);
+    transform: translateX(20%);
   }
 
   to {
     opacity: 1;
-    transform: translateX(0px);
+    transform: translateX(0%);
   }
 
 }
@@ -155,6 +157,8 @@
   animation: appearRight linear;
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 @keyframes lineAnimate {
