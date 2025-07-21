@@ -41,7 +41,7 @@ export default function Skills() {
                 <p className="text-center font-extralight">Estas são as tecnologias com as quais eu trabalho</p>
             </div>
 
-            <div className="bg-zinc-400 flex justify-center p-5 overflow-hidden mt-5 appearRight">
+            <div className="bg-zinc-400 flex justify-center p-5 overflow-hidden mt-5">
                 <div className="relative w-full max-w-7xl">
                     <Carousel className="w-full">
                         <CarouselContent>
