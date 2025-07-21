@@ -5,9 +5,9 @@ import img_profile from "../../assets/img_profile.png"
 
 export default function About() {
     return (
-        <section className="text-white w-full">
+        <section className="text-white w-full h-screen flex flex-col justify-center">
             <h1 className="text-center text-3xl uppercase font-bold appearLeft">Sobre mim</h1>
-            <div className="m-5 md:flex md:items-center md:flex-row-reverse md:h-screen gap-5">
+            <div className="m-5 md:flex md:items-center md:flex-row-reverse gap-5">
                 <div className="w-full flex justify-center appearRight">
                     <img src={img_profile} alt="Imagem de perfil" className="rounded-full max-w-[300px] w-full h-[300px] md:max-w-[600px] md:h-[600px] object-cover object-[0_20%]" />
                 </div>
