@@ -3,74 +3,44 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { SiNextdotjs, SiTypescript } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { Card, CardContent } from "../../components/ui/card";
 
 export default function Skills() {
-
     const skillsIcons = [
-        {
-            icon: <FaReact />
-        },
-        {
-            icon: <SiTypescript />
-        },
-        {
-            icon: <IoLogoJavascript />
-        },
-        {
-            icon: <FaHtml5 />
-        },
-        {
-            icon: <FaCss3Alt />
-        },
-        {
-            icon: <FaGitAlt />
-        },
-        {
-            icon: <SiNextdotjs />
-        },
-        {
-            icon: <RiTailwindCssFill />
-        }
-    ]
+        { name: "React", icon: <FaReact /> },
+        { name: "TypeScript", icon: <SiTypescript /> },
+        { name: "JavaScript", icon: <IoLogoJavascript /> },
+        { name: "HTML", icon: <FaHtml5 /> },
+        { name: "CSS", icon: <FaCss3Alt /> },
+        { name: "Git", icon: <FaGitAlt /> },
+        { name: "Next.js", icon: <SiNextdotjs /> },
+        { name: "Tailwind", icon: <RiTailwindCssFill /> },
+    ];
 
     return (
-        <section className="w-full text-white mt-16 h-screen flex flex-col justify-center">
-            <div className="appearLeft">
-                <h1 className="text-center text-3xl uppercase font-bold flex flex-col items-center gap-2">
-                    Minhas Skills
-                    <span className="w-full max-w-[300px] p-[0.5px] bg-white appearLine"></span>
-                </h1>
-                <p className="text-center font-extralight">Estas são as tecnologias com as quais eu trabalho</p>
+        <section id="skills" className="portfolio-section text-white">
+            <div className="section-heading appearLeft">
+                <span className="section-kicker">Tecnologias</span>
+                <h1 className="section-title">Minhas skills</h1>
+                <p className="section-description">Ferramentas que utilizo para construir interfaces modernas e consistentes.</p>
             </div>
 
-            <div className="bg-zinc-400 flex justify-center p-5 overflow-hidden mt-5">
-                <div className="relative w-full max-w-7xl">
-                    <Carousel className="w-full">
-                        <CarouselContent>
-                            {skillsIcons.map((skills, index) => (
-                                <CarouselItem
-                                    key={index}
-                                    className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6 2xl:basis-1/8"
-                                >
-                                    <div className="p-2">
-                                        <Card className="bg-zinc-400 border-none">
-                                            <CardContent className="flex aspect-square items-center justify-center p-6">
-                                                <span className="text-[100px] font-semibold">{skills.icon}</span>
-                                            </CardContent>
-                                        </Card>
-                                    </div>
-                                </CarouselItem>
-                            ))}
-                        </CarouselContent>
-
-                        <CarouselPrevious className="bg-zinc-950 left-0 absolute top-1/2 -translate-y-1/2 z-10" />
-                        <CarouselNext className="bg-zinc-950 right-0 absolute top-1/2 -translate-y-1/2 z-10" />
-                    </Carousel>
-                </div>
+            <div className="relative rounded-3xl border border-white/[0.08] bg-white/[0.025] p-4 sm:p-6 appearRight">
+                <Carousel className="w-full" opts={{ align: "start", loop: true }}>
+                    <CarouselContent className="-ml-3">
+                        {skillsIcons.map((skill) => (
+                            <CarouselItem key={skill.name} className="basis-1/2 pl-3 sm:basis-1/3 md:basis-1/4 lg:basis-1/5">
+                                <div className="group flex aspect-[4/5] flex-col items-center justify-center rounded-2xl border border-white/[0.08] bg-[#111114] transition duration-300 hover:-translate-y-1 hover:border-[#67e8d1]/30 hover:shadow-[0_20px_50px_rgba(103,232,209,.06)]">
+                                    <span className="text-[clamp(3.5rem,8vw,5.25rem)] text-zinc-300 transition duration-300 group-hover:scale-110 group-hover:text-[#67e8d1]">{skill.icon}</span>
+                                    <span className="mt-4 text-sm font-semibold text-zinc-500 transition group-hover:text-zinc-200">{skill.name}</span>
+                                </div>
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="-left-5 top-[calc(100%+28px)] size-10 border-white/10 bg-[#111114] text-white hover:bg-[#67e8d1] hover:text-black" />
+                    <CarouselNext className="left-10 top-[calc(100%+28px)] size-10 border-white/10 bg-[#111114] text-white hover:bg-[#67e8d1] hover:text-black" />
+                </Carousel>
+                <div className="h-12" />
             </div>
         </section>
-
-
-    )
+    );
 }
